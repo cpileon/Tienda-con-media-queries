@@ -1,0 +1,255 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*----DIAGRAMACION VERSION MOBILE----*/
+.container-grid{
+    width: 100%;
+    display: grid;
+    grid-template-areas: 
+    'menu_top'
+    'search'
+    'store'
+    'footer';
+}
+
+/*MENU DE ARRIBA*/
+.menu-top{
+    grid-area: menu_top;
+    display: flex;
+    background: rgb(255,222,165);
+    background: linear-gradient(90deg, rgba(255,222,165,1) 44%, rgba(0,212,255,1) 100%);
+    width: 100%;
+}
+
+.menu-logo{
+    width: 50%;
+}
+
+.logo{
+    width: 100px;
+    padding-top: 4%;
+    padding-left: 8%;
+}
+
+.menu-icon{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.menu-icon i{
+    color: white;
+    font-size: 40px;
+    margin-right: 5%;
+    filter: drop-shadow(5px 3px 3px rgba(0, 0, 0, 0.5));
+}
+
+/*BARRA DE BUSQUEDA*/
+.search{
+    grid-area: search;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+}
+
+.search-combo{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.lista{
+    height: 40px;
+    width: 90%;
+    border-radius: 15px;
+    box-shadow: 5px 5px #ccc;
+}
+
+/*MENU DE LA IZQUIERDA*/
+
+.menu-left{
+    grid-area: menu_left;
+    display: none;
+}
+
+/*TIENDA*/
+.store{
+    grid-area: store;
+    display: grid;
+    grid-column: 1fr;
+}
+
+.store-products{
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card, .card-1{
+    padding: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    padding:1em;
+    line-height:1.5em;
+    border:dotted 5px #bbb;
+}
+
+.card-1{
+    display: none;
+}
+
+.store-products img{
+    width: 80%;
+}
+
+.store-products h4{
+    color: #bbb;
+}
+
+.store-products h3{
+    text-align: center;
+    margin: 2%;
+}
+
+.store button{
+    background-color: #00d4ff;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 10px 0px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/*PAGINACIÓN*/
+.store-pages{
+    display: flex;
+    justify-content: center;
+    padding: 5%;
+    margin-bottom: 5%;
+}
+
+.pages{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.pages .page-item .page-link{
+    text-decoration: none;
+    padding: 5px 12px;
+    border: 1px solid #ddd; 
+    color: rgb(59, 59, 59);
+}
+
+.page-item:last-child .page-link{
+    border-radius: 0 5px 5px 0;
+}
+
+.page-item:first-child .page-link{
+    border-radius: 5px 0 0 5px;
+}
+
+.page-item .page-link:hover{
+    background-color: #ccc;
+}
+
+/*FOOTER*/
+.footer{
+    grid-area: footer;
+    background-color: #ffdea5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5%;
+    font-weight: 600;
+    color: white;
+    text-align: center;
+}
+
+.footer-icons i{
+    font-size: 30px;
+}
+
+/*----DIAGRAMACION VERSION ESCRITORIO---*/
+@media (min-width: 576px){
+    .container-grid{
+        width: 100%;
+        display: grid;
+        grid-template-areas:
+        'menu_top search'
+        'menu_left store'
+        'footer store'
+        ;
+        grid-template-columns: 2fr 10fr;
+        grid-template-rows: 1fr 4fr 1fr;
+    }
+
+    .menu-top{
+        grid-area: menu_top;
+        display: flex;
+        background: rgb(255,222,165);
+        background: linear-gradient(0deg, rgba(255,222,165,1) 0%, rgba(0,212,255,1) 100%);
+        width: 100%;
+    }
+
+    .menu-icon{
+        width: 50%;
+        display: none;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    .menu-logo{
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .logo{
+        width: 80%;
+    }
+
+    .menu-left{
+        grid-area: menu_left;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-weight: 600;
+        background-color: #ffdea5;
+    }
+
+    .search{
+        grid-area: search;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 5%;
+    }
+
+    .card-1{
+        display: flex;
+    }
+
+    .store-products{
+        padding: 5%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 3%;
+    }
+}
+
+
